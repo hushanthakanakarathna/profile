@@ -156,3 +156,46 @@ main {
     overflow: hidden; }
     main#index h1 {
       margin-top: 20vh; }
+
+@media screen and (max-width: 768px) {
+  h1.lg-heading, h2.lg-heading, h3.lg-heading {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem; }
+  h1.sm-heading, h2.sm-heading, h3.sm-heading {
+    font-size: 1rem;
+    padding: 0.2rem 0; }
+  main {
+    padding: 1.2rem;
+    align-items: center;
+    text-align: center; }
+    main .icons {
+      margin-top: 2.5rem; }
+  .menu-branding, .menu-nav {
+    float: none;
+    width: 100%;
+    min-height: 0; }
+  .menu-nav {
+    transform: translate3d(-100%, 100%, 0);
+    height: 70vh; }
+    .menu-nav.show {
+      transform: translate3d(0, 0, 0); }
+  .menu-branding {
+    transform: translate3d(100%, -100%, 0);
+    height: 30vh; }
+    .menu-branding.show {
+      transform: translate3d(0, 0, 0); }
+    .menu-branding .portrait {
+      width: 100px;
+      height: 100px; }
+  .menu .nav-item {
+    transform: translate3d(-600px, 100px, 0); }
+    .menu .nav-item.show {
+      transform: translate3d(0, 0, 0); }
+  .menu .nav-link {
+    font-size: 1.3rem;
+    padding: 0.8rem 0; } }
+
+@media screen and (max-width: 500px) {
+  main#index h1 {
+    margin-top: 15vh; } }
