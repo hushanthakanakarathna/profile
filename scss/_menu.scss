@@ -48,7 +48,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    opacity: 0.9;
+    opacity: 0.95;
     visibility: hidden;
 
     &.show {
@@ -96,6 +96,7 @@
             border-radius: 50%;
             background:#ccc;
             border: solid 3px $secondary-color;
+            box-shadow: 0 0 10px #000;
         }
     }
     .nav-item {
