@@ -15,6 +15,7 @@
         border-radius:50px;
         @include easeOut();
     }
+
     &:hover {
         .btn-line{
             background:$secondary-color;
@@ -43,6 +44,8 @@
         }
     }
 }
+
+
 // menu overlay
 .menu {
     position: fixed;
@@ -94,7 +97,8 @@
             width: 250px;
             height: 250px;
             border-radius: 50%;
-            background:#ccc;
+            background:url('../img/home-background.jpg');
+            background-size: cover;
             border: solid 3px $secondary-color;
             box-shadow: 0 0 10px #000;
         }

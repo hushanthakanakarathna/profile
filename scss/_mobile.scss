@@ -2,17 +2,37 @@
 @include mediaXl {
     main {
         .icons {
+            float:left;
             margin-top: 1rem;
-            text-align: right;
-            padding-right: 30px;
+            padding-left: 70px;
         }
-        &#index {
+        .site-link {
+            float:right;
+            margin-top: 20px;
+            padding-right: 70px;
+        }
+        h1, h2, h3 {
+            &.lg-heading {
+                line-height:1;
+                margin-bottom: 10px;
+                padding-top: 35px;
+            }
+            &.sm-heading {
+                margin-top:2rem;
+            }
+        }
+        &#index {  
             .branding {
-                padding-top: 0px;
+                float:left;
+                padding-top: 30px;
+                width:30%;
             }
             .portrait {
                 width: 230px;
                 height: 230px;
+            }
+            .clearfix {
+                clear: both;
             }
         }
     }
@@ -52,7 +72,41 @@
             }
         }
     }
+    // About page styles
+    #about {
+        h1{
+            float:none;
+        }
+        .about-info {
+    
+            .bio-image {
+                width:200px;
+                height:200px;
+            }
+        }
+    }
+
+    // works page styles
+    #work {
+        h1{
+            float:none;
+        }
+    }
+
+    // works page styles
+    #contact {
+        h1{
+            float:none;
+        }
+        .boxes {
+            grid-template-areas:
+            'address phone'
+            'email web';
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
 }
+
 // Tablets & Small Laptops
 @include mediaMd {
     h1, h2, h3 {
@@ -129,7 +183,75 @@
             padding: 0.8rem 0;
         }
     }
+    #about {
+        h1{
+            font-size:3rem;
+            margin-top:60px;
+        }
+        h2 {
+            margin-top: -20px;
+            margin-left: 0;
+            padding-bottom: 0;
+        }
+        .border {
+            margin:auto;
+            margin-top: -20px;
+        }
+        .about-info {
+            grid-template-areas:
+            'bioimage bioimage'
+            'bio bio'
+            'job1 job2'
+            'job3 job4';
+            grid-template-columns:repeat(2,1fr);
+        }
+    }
+
+    #work {
+        h1{
+            font-size:3rem;
+            margin-top:60px;
+        }
+        h2 {
+            margin-top: -20px;
+            margin-left: 0;
+            padding-bottom: 0;
+        }
+        .border {
+            margin:auto;
+            margin-top: -20px;
+        }
+        .project-list {
+            grid-template-areas:
+            'bioimage bio'
+            'job1 job2';
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    #contact {
+        h1{
+            font-size:3rem;
+            margin-top:60px;
+        }
+        h2 {
+            margin-top: -20px;
+            margin-left: 0;
+            padding-bottom: 0;
+        }
+        .border {
+            margin:auto;
+            margin-top: -20px;
+        }
+        .boxes {
+            grid-template-areas:
+            'address phone'
+            'email web';
+            grid-template-columns: 1fr 1fr;
+        }
+    }
 }
+
 // Mobile Phones
 @include mediaSm {
     main {
@@ -137,5 +259,36 @@
     }
     main#index h1 {
         margin-top:10px;
+    }
+    #about {
+        .about-info {
+            grid-template-areas:
+            'bioimage'
+            'bio'
+            'job1'
+            'job2'
+            'job3';
+            grid-template-columns:1fr;
+        }
+    }
+    #work {
+        .project-list {
+            grid-template-areas:
+            'bioimage'
+            'bio'
+            'job1'
+            'job2';
+            grid-template-columns: 1fr;
+        }
+    }
+    #contact {
+        .boxes {
+            grid-template-areas:
+            'address'
+            'phone'
+            'email'
+            'web';
+            grid-template-columns: 1fr;
+        }
     }
 }
