@@ -1,310 +1,316 @@
-@import 'config';
+@import "config";
 // navigation styles
-@import 'menu';
+@import "menu";
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    @include background;
-    background: $primary-color;
-    color:$main-white;
-    height:100%;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.5;
+body {
+  @include background;
+  background: $primary-color;
+  color: $main-white;
+  height: 100%;
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
 }
 
 // Headings
-h1, h2, h3 {
-    margin: 0;
-    font-weight: 400;
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
 
-    &.lg-heading {
-        font-size: 6rem;
-    }
-    &.sm-heading {
-        margin-bottom:2rem;
-        padding: 0.2rem 1rem;
-        background:rgba(lighten($primary-color, 8), 0.5);
-        box-shadow: 0 0 10px #000;
-    }
+  &.lg-heading {
+    font-size: 6rem;
+  }
+  &.sm-heading {
+    margin-bottom: 2rem;
+    padding: 0.2rem 1rem;
+    background: rgba(lighten($primary-color, 8), 0.5);
+    box-shadow: 0 0 10px #000;
+  }
 }
 
 // links
 a {
-    color: $main-white;
-    text-decoration: none;
+  color: $main-white;
+  text-decoration: none;
 }
 // secondary text
 .text-secondary {
-    color: $secondary-color;
+  color: $secondary-color;
 }
 header {
-    position: fixed;
-    z-index: 2;
-    width: 100%;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
 }
 
 main {
-    padding: 4rem;
-    height: 100%;
+  padding: 4rem;
+  height: 100%;
 
-    .icons {
-        margin-top: 1rem;
+  .icons {
+    margin-top: 1rem;
 
-        a {
-            padding: 0.4rem;
+    a {
+      padding: 0.4rem;
 
-            &:hover {
-                color: $secondary-color;
-                @include easeOut();
-            }
-        }
+      &:hover {
+        color: $secondary-color;
+        @include easeOut();
+      }
+    }
+  }
+
+  .site-link {
+    margin-top: 30px;
+    a {
+      background: $secondary-color;
+      padding: 5px 15px;
+      border-radius: 20px;
+      color: $primary-color;
+      font-weight: bold;
+
+      i {
+        padding-left: 5px;
+      }
+      &:hover {
+        background: transparent;
+        color: $secondary-color;
+        box-shadow: 0 0 10px $secondary-color;
+        @include easeOut;
+      }
+    }
+  }
+
+  &#index {
+    overflow: hidden;
+    h1 {
+      margin-top: 0;
     }
 
-    .site-link {
-        margin-top:30px;
-        a {
-            background:$secondary-color;
-            padding:5px 15px;
-            border-radius: 20px;
-            color:$primary-color;
-            font-weight: bold;
-
-            i {
-                padding-left:5px;
-            }
-            &:hover {
-                background:transparent;
-                color:$secondary-color;
-                box-shadow: 0 0 10px $secondary-color;
-                @include easeOut;
-            }
-        }
+    .branding {
+      padding-top: 50px;
     }
-
-    &#index {
-        overflow: hidden;
-        h1 {
-            margin-top: 0;
-        }
-
-        .branding {
-            padding-top: 50px;
-        }
-        .portrait {
-            width: 100px;
-            height: 100px;
-            margin:0 auto;
-            border-radius: 50%;
-            background:url('../img/home-background.jpg');
-            background-size: cover;
-            border: solid 3px $secondary-color;
-            box-shadow: 0 0 10px #000;
-        }
+    .portrait {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      border-radius: 50%;
+      background: url("../img/home-background.jpg");
+      background-size: cover;
+      border: solid 3px $secondary-color;
+      box-shadow: 0 0 10px #000;
     }
+  }
 }
 
 // About page styles
 #about {
-    h1{
-        font-size:5rem;
-    }
-    h2 {
-        background:none;
-        box-shadow: none;
-        margin-top: -20px;
-        margin-left: 60px;
-        padding-bottom: 0;
-    }
-    .border {
-        width:200px;
-        height:4px;
-        background:$secondary-color;
-        margin-top: -20px;
-        margin-left:220px;
-        border-radius: 20px;
-    }
-    .about-info {
-        padding-top:60px;
-        display: grid;
-        grid-gap: 30px;
-        grid-template-areas:
-        'bioimage bio bio'
-        'job1 job2 job3';
-        grid-template-columns: repeat(3, 1fr);
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    background: none;
+    box-shadow: none;
+    margin-top: -20px;
+    margin-left: 60px;
+    padding-bottom: 0;
+  }
+  .border {
+    width: 200px;
+    height: 4px;
+    background: $secondary-color;
+    margin-top: -20px;
+    margin-left: 220px;
+    border-radius: 20px;
+  }
+  .about-info {
+    padding-top: 60px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+      "bioimage bio bio"
+      "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
 
-        .bio-image {
-            grid-area: bioimage;
-            width:250px;
-            height:250px;
-            margin:auto;
-            border-radius: 50%;
-            border:3px solid $secondary-color;
-        }
-        .bio {
-            grid-area: bio;
-            font-size: 1.2rem;
-        }
-        .job {
-            background:lighten($primary-color, 5);
-            padding:0.5rem 1.5rem;
-            border-bottom: 5px solid $secondary-color;
-
-            &.job-1 {
-                grid-area: job1;
-            }
-            &.job-2 {
-                grid-area: job2;
-            }
-            &.job-3 {
-                grid-area: job3;
-            }
-        }
+    .bio-image {
+      grid-area: bioimage;
+      width: 250px;
+      height: 250px;
+      margin: auto;
+      border-radius: 50%;
+      border: 3px solid $secondary-color;
     }
+    .bio {
+      grid-area: bio;
+      font-size: 1.2rem;
+    }
+    .job {
+      background: lighten($primary-color, 5);
+      padding: 0.5rem 1.5rem;
+      border-bottom: 5px solid $secondary-color;
+
+      &.job-1 {
+        grid-area: job1;
+      }
+      &.job-2 {
+        grid-area: job2;
+      }
+      &.job-3 {
+        grid-area: job3;
+      }
+    }
+  }
 }
 
 // works page styles
 #work {
-    h1{
-        font-size:5rem;
-    }
-    h2 {
-        background:none;
-        box-shadow: none;
-        margin-top: -20px;
-        margin-left: 90px;
-        padding-bottom: 0;
-    }
-    .border {
-        width:200px;
-        height:4px;
-        background:$secondary-color;
-        margin-top: -20px;
-        margin-left:280px;
-        border-radius: 20px;
-    }
-    .project-list {
-        padding-top:60px;
-        display: grid;
-        grid-gap: 30px;
-        grid-template-areas:
-        'bioimage bio bio'
-        'job1 job2 job3';
-        grid-template-columns: repeat(3, 1fr);
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    background: none;
+    box-shadow: none;
+    margin-top: -20px;
+    margin-left: 90px;
+    padding-bottom: 0;
+  }
+  .border {
+    width: 200px;
+    height: 4px;
+    background: $secondary-color;
+    margin-top: -20px;
+    margin-left: 280px;
+    border-radius: 20px;
+  }
+  .project-list {
+    padding-top: 60px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+      "bioimage bio bio"
+      "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
 
-        .project {
-            width:100%;
-            min-height:300px;
-            overflow: hidden;
-            background:lighten($primary-color, 5);
-            border-bottom: 5px solid $secondary-color;
-            text-align: left;
+    .project {
+      width: 100%;
+      min-height: 300px;
+      overflow: hidden;
+      background: lighten($primary-color, 5);
+      border-bottom: 5px solid $secondary-color;
+      text-align: left;
 
-            .project-thumb {
-                grid-area: bioimage;
-            }
+      .project-thumb {
+        grid-area: bioimage;
+      }
 
-            .project-details {
-                padding:0 1rem;
+      .project-details {
+        padding: 0 1rem;
 
-                h3 {
-                    text-transform: capitalize;
-                    float:left;
-
-                }
-                a {
-                    float:right;
-                    background:rgba(lighten($primary-color, 15), 1);
-                    padding:2px 10px;
-                    i {
-                        padding-right:8px;
-                        color:$secondary-color;
-                    }
-                }
-            }
+        h3 {
+          text-transform: capitalize;
+          float: left;
         }
+        a {
+          float: right;
+          background: rgba(lighten($primary-color, 15), 1);
+          padding: 2px 10px;
+          i {
+            padding-right: 8px;
+            color: $secondary-color;
+          }
+        }
+      }
     }
+  }
 }
 
 // contact page styles
 #contact {
-    h1{
-        font-size:5rem;
-    }
-    h2 {
-        background:none;
-        box-shadow: none;
-        margin-top: -20px;
-        margin-left: 180px;
-        padding-bottom: 0;
-    }
-    .border {
-        width:200px;
-        height:4px;
-        background:$secondary-color;
-        margin-top: -20px;
-        margin-left:300px;
-        border-radius: 20px;
-    }
-    .boxes {
-        padding-top:60px;
-        text-align: center;
-        display: grid;
-        grid-gap: 30px;
-        grid-template-areas:
-        'address phone email web';
-        grid-template-columns: repeat(4,1fr);
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    background: none;
+    box-shadow: none;
+    margin-top: -20px;
+    margin-left: 180px;
+    padding-bottom: 0;
+  }
+  .border {
+    width: 200px;
+    height: 4px;
+    background: $secondary-color;
+    margin-top: -20px;
+    margin-left: 300px;
+    border-radius: 20px;
+  }
+  .boxes {
+    padding-top: 60px;
+    text-align: center;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas: "address phone email web";
+    grid-template-columns: repeat(4, 1fr);
 
-        .box {
-            background:lighten($primary-color, 5);
-            padding:0.5rem 1.5rem;
-            border-bottom: 5px solid $secondary-color;
+    .box {
+      background: lighten($primary-color, 5);
+      padding: 0.5rem 1.5rem;
+      border-bottom: 5px solid $secondary-color;
 
-            i {
-                color:$secondary-color;
-            }
+      i {
+        color: $secondary-color;
+      }
 
-            &.box-1 {
-                grid-area: address;
-            }
-            &.box-2 {
-                grid-area: phone;
-            }
-            &.box-3 {
-                grid-area: email;
-                word-break: break-all;
-            }
-            &.box-4 {
-                grid-area: web;
-            }
-        }
+      &.box-1 {
+        grid-area: address;
+      }
+      &.box-2 {
+        grid-area: phone;
+      }
+      &.box-3 {
+        grid-area: email;
+        word-break: break-all;
+      }
+      &.box-4 {
+        grid-area: web;
+      }
     }
+  }
 }
 
 // Media queries
 
 @mixin mediaSm {
-    @media screen and (max-width:500px){
-        @content;
-    }
+  @media screen and (max-width: 500px) {
+    @content;
+  }
 }
 @mixin mediaMd {
-    @media screen and (max-width:768px){
-        @content;
-    }
+  @media screen and (max-width: 768px) {
+    @content;
+  }
 }
 @mixin mediaLg {
-    @media screen and (min-width:769px) and  (max-width:1170px){
-        @content;
-    }
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
 }
 @mixin mediaXl {
-    @media screen and (min-width:1171px){
-        @content;
-    }
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
 }
 
-@import 'mobile';
+@import "mobile";

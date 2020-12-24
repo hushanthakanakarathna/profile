@@ -1,5 +1,5 @@
 .menu-btn {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   right: 35px;
   top: 35px;
@@ -106,7 +106,7 @@ body {
   color: #fff;
   height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-image {
     background: url("../img/home-background.jpg");
@@ -124,12 +124,18 @@ body {
       z-index: -1;
       background: rgba(70, 72, 182, 0.85); }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
   font-weight: 400; }
-  h1.lg-heading, h2.lg-heading, h3.lg-heading {
+  h1.lg-heading,
+  h2.lg-heading,
+  h3.lg-heading {
     font-size: 6rem; }
-  h1.sm-heading, h2.sm-heading, h3.sm-heading {
+  h1.sm-heading,
+  h2.sm-heading,
+  h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
     background: rgba(98, 100, 195, 0.5);
@@ -146,6 +152,11 @@ header {
   position: fixed;
   z-index: 2;
   width: 100%; }
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto; }
 
 main {
   padding: 4rem;
@@ -210,7 +221,7 @@ main {
   padding-top: 60px;
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr); }
   #about .about-info .bio-image {
     grid-area: bioimage;
@@ -255,7 +266,7 @@ main {
   padding-top: 60px;
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
+  grid-template-areas: "bioimage bio bio" "job1 job2 job3";
   grid-template-columns: repeat(3, 1fr); }
   #work .project-list .project {
     width: 100%;
@@ -302,7 +313,7 @@ main {
   text-align: center;
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'address phone email web';
+  grid-template-areas: "address phone email web";
   grid-template-columns: repeat(4, 1fr); }
   #contact .boxes .box {
     background: #5759be;
